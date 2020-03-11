@@ -16,7 +16,9 @@ class HomePageTemp extends StatelessWidget {
 
       body: ListView( 
 
-        children: _crearItems()
+        //children: _crearItems()
+
+        children: _crearrItemsCorta()
 
         // Forma de Hacer una lista 
        /* children: <Widget>[
@@ -52,7 +54,7 @@ class HomePageTemp extends StatelessWidget {
         title: Text(opt),
       );
 
-      lista..add(tempWidget)
+      lista..add(tempWidget)  // operador de cascada
         ..add(Divider());
 
        //lista.add(Divider()); forma normal
@@ -61,6 +63,26 @@ class HomePageTemp extends StatelessWidget {
 
     return lista;
 }
+    List<Widget> _crearrItemsCorta(){    // crear lista corta
+      var widgets = opciones.map((item){
+        
+          return Column(
+            children: <Widget>[
+              ListTile(
+               title: Text(item+ '!'),
+               subtitle: Text('Numeros numeros'),
+               leading: Icon(Icons.ac_unit),
+               trailing: Icon(Icons.arrow_forward_ios),
+              onTap: (){},
 
+        ),
 
+        Divider()
+            ],
+          );
+      }).toList();
+      
+        return widgets;
+    }
+     
 }
